@@ -2,16 +2,14 @@ import streamlit as st
 import streamlit.components.v1 as components
 import time
 
-st.set_page_config(
-    page_title="Valentine 💖",
-    page_icon="💘",
-    layout="centered"
-)
+# Page config
+st.set_page_config(page_title="Valentine 💖", layout="centered")
 
-# Initialize session state
+# Session state
 if "yes_clicked" not in st.session_state:
     st.session_state.yes_clicked = False
 
+# Title
 st.markdown(
     """
     <h1 style="text-align:center; color:#ff4b5c;">
@@ -55,7 +53,7 @@ if not st.session_state.yes_clicked:
 
             <script>
             const btn = document.getElementById("noBtn");
-            document.addEventListener("mousemove", function() {
+            document.addEventListener("mousemove", function () {
                 const x = Math.random() * (window.innerWidth - 100);
                 const y = Math.random() * (window.innerHeight - 50);
                 btn.style.left = x + "px";
@@ -65,7 +63,7 @@ if not st.session_state.yes_clicked:
             </body>
             </html>
             """,
-            height=250,
+            height=200,
         )
 
 # AFTER YES CLICK
